@@ -47,7 +47,5 @@ jobs:
             echo "TESTDINO_TOKEN detected (hidden for security)"
           fi
 
-          # Upload with environment specified
-          npx --yes tdpw upload ./playwright-report --upload-html --token "$TESTDINO_TOKEN" --env production --verbose
-
-
+          # Upload report using the secure token
+          npx --yes tdpw upload ./playwright-report --upload-html --token "$TESTDINO_TOKEN" --verbose
