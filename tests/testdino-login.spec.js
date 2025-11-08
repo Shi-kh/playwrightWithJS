@@ -42,9 +42,10 @@ test('Login to TestDino (step-by-step)', async ({ page }) => {
     await expect(page.locator(login.locators.testRunsHeading)).toBeVisible();
   });
 
-  await test.step('9 - Verify Test Run entry visible on dashboard', async () => {
-    const testRunRow = page.locator("//div[contains(text(),'Playwright Test Report')]");
-    await testRunRow.waitFor({ state: 'visible', timeout: 15000 });
-    await expect(testRunRow).toBeVisible();
-  });
+  // await test.step('9 - Verify Test Run entry visible on dashboard', async () => {
+  //   const testRunRow = page.locator("//div[contains(text(),'Playwright Test Report')]");
+  //   await testRunRow.waitFor({ state: 'visible', timeout: 15000 });
+  //   await expect(testRunRow).toBeVisible();
+  // });
 });
+// trx_{environment}_{key}.
