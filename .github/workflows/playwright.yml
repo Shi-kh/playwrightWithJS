@@ -37,6 +37,6 @@ jobs:
       - name: Upload to TestDino
         if: always()
         env:
-          TESTDINO_TOKEN: ${{ secrets.TESTDINO_API_KEY }}
+          TESTDINO_TOKEN: ${{ secrets.TESTDINO_TOKEN }}
         run: |
           npx --yes tdpw upload ./playwright-report --upload-html
