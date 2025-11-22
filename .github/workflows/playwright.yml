@@ -48,6 +48,6 @@ jobs:
         run: |
           echo "Uploading report to TestDino..."
           npx --yes tdpw upload ./playwright-report \
-            --json-report test-results.json \
+            --json-report ./playwright-report/report.json \
             --upload-html \
             --token "$TESTDINO_TOKEN" --verbose
