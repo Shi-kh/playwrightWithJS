@@ -27,6 +27,7 @@ jobs:
       - name: Run Playwright Tests
         run: |
           npx playwright test --reporter=line,html,json
+          echo "------ LISTING WORKSPACE FILES ------"
           ls -R .
 
       - name: Upload Playwright HTML Report (local backup)
@@ -48,5 +49,3 @@ jobs:
           else
             echo "TESTDINO_TOKEN detected (hidden for security)"
           fi
-
-          npx --yes tdpw upload ./playwright-report --upload-html --token "$TESTDINO_TOKEN" --verbose
