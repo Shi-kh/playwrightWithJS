@@ -1,4 +1,3 @@
-// playwright.config.js
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
@@ -9,7 +8,8 @@ export default defineConfig({
     baseURL: 'https://app.testdino.com/',
   },
   reporter: [
-    ['html', { outputDir: 'playwright-report', open: 'never' }],
-    ['json', { outputFile: 'playwright-report/report.json' }],
-  ],
+    ['list'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['json', { outputFile: 'playwright-report/report.json' }]
+  ]
 });
