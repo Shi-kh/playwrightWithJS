@@ -42,10 +42,8 @@ jobs:
         env:
           TESTDINO_TOKEN: ${{ secrets.TESTDINO_TOKEN }}
         run: |
-          echo "Verifying TestDino token presence..."
-          if [ -z "$TESTDINO_TOKEN" ]; then
-            echo "TESTDINO_TOKEN is not set or empty!"
-            exit 1
-          else
-            echo "TESTDINO_TOKEN detected (hidden for security)"
-          fi
+          echo "Uploading report to TestDino..."
+          npx --yes tdpw upload ./playwright-report \
+            --json-report playwright-report/test-results.json \
+            --upload-html \
+            --token "$TESTDINO_TOKEN" --verbose
