@@ -25,7 +25,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=line,html,json
+        run: npx playwright test --reporter=line,html,json=playwright-report/report.json
 
       - name: Upload Playwright HTML Report (local backup)
         if: always()
@@ -48,4 +48,4 @@ jobs:
           fi
 
           # Upload report using the secure token
-          npx --yes tdpw upload ./playwright-report --upload-html --token "$TESTDINO_TOKEN" --verbose
+          npx --yes tdpw upload ./playwright-report --json-report playwright-report/report.json --upload-html --token "$TESTDINO_TOKEN" --verbose
