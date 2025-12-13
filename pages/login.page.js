@@ -15,6 +15,7 @@ export class LoginPage {
   async goto() {
     await this.page.goto('https://app.testdino.com/');
     await this.page.waitForLoadState();
+    await this.page.waitForTimeout(10000); // wait for 2 seconds to ensure page is fully loaded
   }
 
   async fillEmail(email) {
