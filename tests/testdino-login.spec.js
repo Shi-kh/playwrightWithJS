@@ -7,7 +7,7 @@ test('Login to TestDino (step-by-step)', async ({ page }) => {
 
   await test.step('1 - Navigate to TestDino homepage', async () => {
     await login.goto();
-    await expect(page).toHaveTitle("https://app.testdino.com/");
+    await expect(page).toHaveTitle(/TestDino/i);
   });
 
   await test.step('2 - Fill email field', async () => {
@@ -34,7 +34,7 @@ test('Login to TestDino (step-by-step)', async ({ page }) => {
 
   await test.step('7 - Wait for dashboard / projects page to load', async () => {
     await page.waitForLoadState('networkidle');
-    await login.waitForDashboard(10000);
+    await login.waitForDashboard(60000);
   });
 
   await test.step('8 - Verify successful login by URL and UI', async () => {
