@@ -7,7 +7,7 @@ test('Login to TestDino (step-by-step)', async ({ page }) => {
 
   await test.step('1 - Navigate to TestDino homepage', async () => {
     await login.goto();
-    await expect(page).toHaveTitle(/TestDino/i);
+    await expect(page).toHaveTitle("https://app.testdino.com/");
   });
 
   await test.step('2 - Fill email field', async () => {
