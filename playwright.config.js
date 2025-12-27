@@ -6,6 +6,7 @@ export default defineConfig({
   use: {
     headless: true,
     screenshot: 'only-on-failure',
+    // storageState: 'auth.json',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
     baseURL: 'https://app.testdino.com/',
@@ -16,3 +17,4 @@ export default defineConfig({
     ['json', { outputFile: 'playwright-report/report.json' }]
   ]
 });
+//npx playwright test tests/testdino-login.spec.js --headed                                                                                                                                                                                                                                                                                                                                                                                                              
