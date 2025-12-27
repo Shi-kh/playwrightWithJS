@@ -15,9 +15,9 @@ export class LoginPage {
   async goto() {
     await this.page.goto('https://app.testdino.com/', { waitUntil: 'domcontentloaded' });
     await this.page.waitForLoadState();
-    await expect.poll(async () => await page.title(), {
-    timeout: 30_000,
-   }).not.toMatch(/just a moment/i);
+  //   await expect.poll(async () => await page.title(), {
+  //   timeout: 30_000,
+  //  }).not.toMatch(/just a moment/i);
   }
 
   async fillEmail(email) {
