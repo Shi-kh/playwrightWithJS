@@ -9,7 +9,7 @@ export default defineConfig({
     // storageState: 'auth.json',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
-    baseURL: 'https://app.testdino.com/',
+    baseURL: 'https://app.testdino.c3+om/',
   },
   reporter: [
     ['list'],
